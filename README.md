@@ -1,18 +1,39 @@
 # Mission Document Intelligence
 
-**Feras Elghandour** · Technical case study
-
 Answer questions about mission documentation using retrieved source passages and make answer quality inspectable.
 
 ## Implementation
 
 A local SQLite FTS5 document index, configurable overlapping chunks, provider-neutral answer composition, and citation-label validation.
 
-```mermaid
-flowchart LR
-    A[Validated inputs] --> B[Portable implementation]
-    B --> C[Evaluation and contract checks]
-    C --> D[Inspectable results]
+![Implementation mechanism: Text documents → 1800-character chunks with 200 overlap → SQLite FTS5 and BM25 retrieval → Injected answer callback uses source labels → Reject citations with unknown labels](assets/mechanism.svg)
+
+## Try a small example
+
+A fictional document and deterministic answer callback exercise retrieval and citation-label validation. Known source labels do not prove that an answer is entailed by its source.
+
+After the local setup below, run from the repository root:
+
+```sh
+python examples/quickstart.py
+```
+
+The [example source](examples/quickstart.py), [captured output](examples/expected-output.txt) and [execution record](examples/environment.json) keep this demonstration inspectable. Floating-point values may vary with library versions.
+
+Observed output from this run:
+
+```text
+{
+  "answer": "An oxygen supply system [S1].",
+  "sources": [
+    {
+      "citation": "S1",
+      "source": "demo.txt"
+    }
+  ],
+  "citation_present": true,
+  "scope": "Citation validity checks labels, not factual entailment."
+}
 ```
 
 ## Completed study
@@ -38,5 +59,3 @@ Prepare your own inputs as described in [DATA.md](DATA.md). Tests use generated 
 ## Practical relevance and limitations
 
 Retrieval can omit relevant evidence and an LLM judge can be wrong. Citations should be checked against the source. Live generation, embeddings, and judging require credentials and may incur provider charges.
-
-This edition makes the core behavior reusable and inspectable. Historical metrics and synthetic contract tests provide different kinds of evidence; neither establishes client deployment or commercial impact.

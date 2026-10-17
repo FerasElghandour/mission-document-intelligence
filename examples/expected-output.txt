@@ -1,0 +1,11 @@
+{
+  "answer": "An oxygen supply system [S1].",
+  "sources": [
+    {
+      "citation": "S1",
+      "source": "demo.txt"
+    }
+  ],
+  "citation_present": true,
+  "scope": "Citation validity checks labels, not factual entailment."
+}
