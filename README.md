@@ -68,3 +68,7 @@ Prepare your own inputs as described in [DATA.md](DATA.md). Tests use generated 
 ## Practical relevance and limitations
 
 Retrieval can omit relevant evidence and an LLM judge can be wrong. Citations should be checked against the source. Live generation, embeddings, and judging require credentials and may incur provider charges.
+
+## Reuse
+
+The original contributions listed in [LICENSING.md](LICENSING.md) are available under [MIT](LICENSE). This scoped grant preserves upstream notices and separate dataset, simulator, notebook and checkpoint terms.
