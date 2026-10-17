@@ -8,6 +8,15 @@ A local SQLite FTS5 document index, configurable overlapping chunks, provider-ne
 
 ![Implementation mechanism: Text documents → 1800-character chunks with 200 overlap → SQLite FTS5 and BM25 retrieval → Injected answer callback uses source labels → Reject citations with unknown labels](assets/mechanism.svg)
 
+
+
+## Reproduce and inspect
+
+The executable reproduction profile now records exact commands, input/source hashes, dependency versions, logs and pass/fail status. Its scope distinguishes behavior checks from full-data benchmarks.
+
+[Commands, artifacts and benchmark scope](BENCHMARKS.md) · [Versioned profiles](reproduction.json)
+
+
 ## Try a small example
 
 A fictional document and deterministic answer callback exercise retrieval and citation-label validation. Known source labels do not prove that an answer is entailed by its source.
