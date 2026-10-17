@@ -17,7 +17,7 @@ flowchart LR
 
 ## Completed study
 
-The project includes a six-question evaluation harness and a configurable ingestion pipeline. This source release does not claim a new live-provider evaluation; generated responses and document-store state are not distributed.
+The completed study used a six-question evaluation harness and configurable ingestion. The public edition exposes retrieval and citation-checking components. This source release does not claim a new live-provider evaluation; generated responses and document-store state are not distributed.
 
 These historical figures describe the completed study. This refactored standalone implementation has separate validation and has not been used to recertify the historical benchmark. The public release contains the portable core and focused tests.
 
